@@ -4,7 +4,7 @@ import numpy as np
 
 # Page config
 st.set_page_config(
-    page_title="Kutloano Sikosana | MSc Physics Profile",
+    page_title="Kutloano Sikosana | MSc Physics",
     layout="wide"
 )
 
@@ -44,68 +44,57 @@ if menu == "Academic Profile":
 
     st.subheader("Personal Information")
     st.write("**Name:** Kutloano Sikosana")
-    st.write("**Field:** Physics and Mathematics")
-    st.write("**Degree:** BSc Physics and Mathematics")
+    st.write("**Degree:** BSc Physics, BSc Physics Honours")
     st.write("**Institution:** University of Pretoria")
-    st.write("**Current Goal:** MSc in Physics")
+    st.write("**Current Status:** MSc Physics Candidate")
+    st.write("**Email:** kutloanosikosana@gmail.com")
 
     st.markdown("---")
 
-    st.subheader("Academic Summary")
+    st.subheader("Professional Profile")
     st.write(
         """
-        I am a Physics and Mathematics graduate with a strong interest in theoretical,
-        computational, and data-driven physics. My training spans classical mechanics,
-        quantum mechanics, statistical physics, and numerical methods, with hands-on
-        experience in computational physics and scientific programming.
+        Physics graduate with a strong background in experimental and computational physics,
+        with research experience in organic photovoltaics and nanomaterials.
+        Current work focuses on incorporating metallic nanoparticles into nanoscale
+        bulk heterojunctions to improve polymer solar cell efficiency, combining laboratory
+        experimentation with simulation-based modelling.
 
-        I am particularly motivated by problems that require translating mathematical
-        structure into physical insight.
-        """
-    )
-
-    st.markdown("---")
-
-    st.subheader("Teaching & Academic Support")
-    st.write(
-        """
-        • Tutor for Computational Physics  
-        • Demonstrator for undergraduate Physics (PHY 114M)  
-        • Experience explaining complex physical concepts clearly and rigorously  
+        Demonstrated strengths in scientific writing, microscopy and microanalysis,
+        numerical methods, and technical communication, supported by tutoring,
+        mentoring, and leadership experience.
         """
     )
 
 # ---------------- Research & Interests ----------------
-elif menu == "Research & Interests":
-    st.title("Research & Academic Interests")
+elif menu == "Research & Experience":
+    st.title("Research & Experience")
 
-    st.subheader("Primary Interests")
+    st.subheader("Research Areas")
     st.write(
         """
-        • Theoretical Physics  
-        • Computational Physics  
-        • Statistical Mechanics  
-        • Condensed Matter and Many-Body Physics  
-        • Numerical Methods and Simulations  
+        • Organic Photovoltaics  
+        • Metallic Nanoparticles and Nanocomposites  
+        • Computational Physics and Modelling  
+        • Statistical Mechanics and Optimisation  
         """
     )
 
-    st.subheader("Research Experience")
+    st.subheader("Research Output")
     st.write(
         """
-        • Final-year Computational Physics project involving genetic algorithms  
-        • Simulation of few-ion NaCl clusters and energy minimisation  
-        • Exploration of saddle points and convergence issues in high-dimensional spaces  
-        • Experience working with microscopy data as part of a research group  
+        • *Tiny Metals:* Electron microscopy review into the synthesis and characterisation
+          of multi-element metallic nanoparticles  
+        • *Mn:Ni:Ce Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cells*  
         """
     )
 
-    st.subheader("Future MSc Focus")
+    st.subheader("Teaching & Academic Support")
     st.write(
         """
-        For my MSc, I aim to deepen my theoretical foundation while developing robust
-        computational tools for solving complex physical systems, particularly in
-        statistical and condensed matter physics.
+        • Computational Physics Tutor (PHY 255), University of Pretoria  
+        • Mentor  
+        • Assisted students with debugging, numerical methods, and scientific reasoning  
         """
     )
 
@@ -185,23 +174,24 @@ elif menu == "Computational & STEM Portfolio":
     st.write(
         """
         • Python (NumPy, Pandas, Matplotlib, Streamlit)  
-        • Scientific Computing and Numerical Analysis  
         • Genetic Algorithms and Optimisation  
-        • Data Analysis and Visualisation  
-        • Linux-based computational environments  
+        • SEM and EDS Microscopy  
+        • Thin-Film and Bulk Heterojunction Fabrication  
+        • Numerical Analysis and Scientific Computing  
         """
     )
-
 # ---------------- Contact ----------------
+
 elif menu == "Contact":
     st.title("Contact Information")
 
     st.write("**Email:** kutloanosikosana@gmail.com")
-    st.write("**Field:** Physics (MSc Applicant)")
+    st.write("**LinkedIn:** www.linkedin.com/in/kutloano-sikosana-5025a2283")
+
     st.write(
         """
-        I am open to research opportunities, academic collaborations,
-        and postgraduate study discussions.
+        Open to postgraduate research opportunities,
+        academic collaboration, and funded MSc projects.
         """
     )
 

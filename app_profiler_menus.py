@@ -74,7 +74,7 @@ elif menu == "Research & Experience":
     st.write(
         """
         • Computational Physics Tutor (PHY 255), University of Pretoria  
-        • Mentor  
+        • Mentor (STARS Mentorship Programme), University of Pretoria  
         • Assisted students with debugging, numerical methods, and scientific reasoning  
         """
     )
@@ -131,6 +131,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

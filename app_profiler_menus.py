@@ -54,13 +54,6 @@ if menu == "Academic Profile":
     st.subheader("Academic Summary")
     st.write(
         """
-        I am a Physics and Mathematics graduate with a strong interest in theoretical,
-        computational, and data-driven physics. My training spans classical mechanics,
-        quantum mechanics, statistical physics, and numerical methods, with hands-on
-        experience in computational physics and scientific programming.
-
-        I am particularly motivated by problems that require translating mathematical
-        structure into physical insight.
         Physics Master’s student at the University of Pretoria | NRF-funded researcher in renewable energy.
 
         I hold a BSc in Physics and Mathematics and an Honours degree in Physics from UP. My research experience 
@@ -78,7 +71,7 @@ if menu == "Academic Profile":
     st.write(
         """
         • Tutor for Computational Physics  
-        • Demonstrator for undergraduate Physics (PHY 114M)  
+        • Mentor  
         • Experience explaining complex physical concepts clearly and rigorously  
         """
     )
@@ -90,10 +83,9 @@ elif menu == "Research & Interests":
     st.subheader("Primary Interests")
     st.write(
         """
-        • Theoretical Physics  
-        • Computational Physics  
-        • Statistical Mechanics  
-        • Condensed Matter and Many-Body Physics  
+        • Renewable Energy (Organic Solar Cells) 
+        • Theoretical Physics
+        • Computational Physics    
         • Numerical Methods and Simulations  
         """
     )
@@ -101,10 +93,12 @@ elif menu == "Research & Interests":
     st.subheader("Research Experience")
     st.write(
         """
-        • Final-year Computational Physics project involving genetic algorithms  
-        • Simulation of few-ion NaCl clusters and energy minimisation  
-        • Exploration of saddle points and convergence issues in high-dimensional spaces  
-        • Experience working with microscopy data as part of a research group  
+        • K.P.A. Sikosana, M.Y. Rasool. 2024. “Tiny Metals: A Comprehensive Electron Microscopy Review
+        into the Synthesis and Characterisation of Multi-element Metallic Nanoparticles.” Department
+        of Physics, University of Pretoria.
+        ● K.P.A. Sikosana, M.M. Diale, T.E. Seimela, M.S.G. Hamed. 2024. “Investigating a Mn:Ni:Ce Metallic 
+        Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cell Device.” Department of 
+        Physics, University of Pretoria.
         """
     )
 
@@ -126,6 +120,13 @@ elif menu == "Publications":
         Upload a CSV file containing publications, conference abstracts,
         posters, or preprints. This section is structured to mirror
         academic application requirements.
+
+        • K.P.A. Sikosana, M.Y. Rasool. 2024. “Tiny Metals: A Comprehensive Electron Microscopy Review
+        into the Synthesis and Characterisation of Multi-element Metallic Nanoparticles.” Department
+        of Physics, University of Pretoria.
+        ● K.P.A. Sikosana, M.M. Diale, T.E. Seimela, M.S.G. Hamed. 2024. “Investigating a Mn:Ni:Ce Metallic 
+        Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cell Device.” Department of 
+        Physics, University of Pretoria.
         """
     )
 
@@ -205,6 +206,7 @@ elif menu == "Contact":
     st.title("Contact Information")
 
     st.write("**Email:** kutloanosikosana@gmail.com")
+    st.write("LinkedIn: www.linkedin.com/in/kutloano-sikosana-5025a2283")
     st.write("**Field:** Physics (MSc Applicant)")
     st.write(
         """
@@ -212,5 +214,6 @@ elif menu == "Contact":
         and postgraduate study discussions.
         """
     )
+
 
 

@@ -14,29 +14,12 @@ menu = st.sidebar.radio(
     "Go to:",
     [
         "Academic Profile",
-        "Research & Interests",
+        "Research & Experience",
         "Publications",
         "Computational & STEM Portfolio",
         "Contact"
     ],
 )
-
-# ---------------- Cached Data ----------------
-@st.cache_data
-def load_physics_data():
-    return pd.DataFrame({
-        "Experiment": [
-            "Alpha Decay",
-            "Beta Decay",
-            "Gamma Spectroscopy",
-            "Ion Cluster Simulation",
-            "Energy Minimisation (GA)"
-        ],
-        "Energy (MeV)": [4.2, 1.5, 2.9, 3.4, 7.1],
-        "Date": pd.date_range(start="2024-01-01", periods=5),
-    })
-
-physics_data = load_physics_data()
 
 # ---------------- Academic Profile ----------------
 if menu == "Academic Profile":
@@ -98,36 +81,7 @@ elif menu == "Research & Experience":
         """
     )
 
-elif menu == "Research & Experience":
-    st.title("Research & Experience")
 
-    st.subheader("Research Areas")
-    st.write(
-        """
-        • Organic Photovoltaics  
-        • Metallic Nanoparticles and Nanocomposites  
-        • Computational Physics and Modelling  
-        • Statistical Mechanics and Optimisation  
-        """
-    )
-
-    st.subheader("Research Output")
-    st.write(
-        """
-        • *Tiny Metals:* Electron microscopy review into the synthesis and characterisation
-          of multi-element metallic nanoparticles  
-        • *Mn:Ni:Ce Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cells*  
-        """
-    )
-
-    st.subheader("Teaching & Academic Support")
-    st.write(
-        """
-        • Computational Physics Tutor (PHY 255), University of Pretoria  
-        • Physics Demonstrator (PHY 114M)  
-        • Assisted students with debugging, numerical methods, and scientific reasoning  
-        """
-    )
 # ---------------- Publications ----------------
 elif menu == "Publications":
     st.title("Publications & Academic Output")
@@ -165,50 +119,6 @@ elif menu == "Publications":
             year_counts = publications["Year"].value_counts().sort_index()
             st.bar_chart(year_counts)
 
-# ---------------- Computational & STEM Portfolio ----------------
-elif menu == "Computational & STEM Portfolio":
-    st.title("Computational & STEM Portfolio")
-
-    st.write(
-        """
-        This section highlights my ability to work with scientific data,
-        simulations, and computational analysis.
-        """
-    )
-
-    st.subheader("Physics Simulation Data")
-    st.dataframe(physics_data)
-
-    energy_range = st.slider(
-        "Filter by Energy (MeV)",
-        0.0, 10.0,
-        (0.0, 10.0)
-    )
-
-    filtered_physics = physics_data[
-        physics_data["Energy (MeV)"].between(*energy_range)
-    ]
-
-    st.subheader("Filtered Results")
-    st.dataframe(filtered_physics)
-
-    st.subheader("Energy vs Time")
-    st.line_chart(
-        filtered_physics.set_index("Date")["Energy (MeV)"]
-    )
-
-    st.markdown("---")
-
-    st.subheader("Technical Skills")
-    st.write(
-        """
-        • Python (NumPy, Pandas, Matplotlib, Streamlit)  
-        • Genetic Algorithms and Optimisation  
-        • SEM and EDS Microscopy  
-        • Thin-Film and Bulk Heterojunction Fabrication  
-        • Numerical Analysis and Scientific Computing  
-        """
-    )
 # ---------------- Contact ----------------
 
 elif menu == "Contact":
@@ -223,5 +133,6 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 

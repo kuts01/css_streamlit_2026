@@ -16,7 +16,6 @@ menu = st.sidebar.radio(
         "Academic Profile",
         "Research & Experience",
         "Publications",
-        "Computational & STEM Portfolio",
         "Contact"
     ],
 )
@@ -132,6 +131,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

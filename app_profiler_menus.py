@@ -43,7 +43,7 @@ if menu == "Academic Profile":
         bulk heterojunctions to improve polymer solar cell efficiency, combining laboratory
         experimentation with simulation-based modelling.
 
-        Demonstrated strengths in scientific writing, microscopy and microanalysis,
+        I have demonstrated strengths in scientific writing, microscopy and microanalysis,
         numerical methods, and technical communication, supported by tutoring,
         mentoring, and leadership experience.
         """
@@ -58,8 +58,7 @@ elif menu == "Research & Experience":
         """
         • Organic Photovoltaics  
         • Metallic Nanoparticles and Nanocomposites  
-        • Computational Physics and Modelling  
-        • Statistical Mechanics and Optimisation  
+        • Computational Physics and Modelling    
         """
     )
 
@@ -133,6 +132,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

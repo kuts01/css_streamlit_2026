@@ -1,148 +1,123 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
 
-# -------------------------------------------------
-# Page configuration
-# -------------------------------------------------
+# Page config
 st.set_page_config(
     page_title="Kutloano Sikosana | MSc Physics Profile",
     layout="wide"
 )
 
-# -------------------------------------------------
-# Academic styling (CV-like)
-# -------------------------------------------------
-st.markdown(
-    """
-    <style>
-    h1, h2, h3 {
-        color: #1E3A8A;
-    }
-
-    section[data-testid="stSidebar"] {
-        background-color: #F7F9FB;
-        border-right: 1px solid #D1D5DB;
-    }
-
-    .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# -------------------------------------------------
-# Sidebar Navigation
-# -------------------------------------------------
+# ---------------- Sidebar Navigation ----------------
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio(
     "Go to:",
     [
         "Academic Profile",
-        "Research & Experience",
+        "Research & Interests",
         "Publications",
         "Computational & STEM Portfolio",
         "Contact"
     ],
 )
 
-# -------------------------------------------------
-# Cached STEM data
-# -------------------------------------------------
+# ---------------- Cached Data ----------------
 @st.cache_data
 def load_physics_data():
     return pd.DataFrame({
-        "Study": [
+        "Experiment": [
             "Alpha Decay",
+            "Beta Decay",
             "Gamma Spectroscopy",
-            "Nanoparticle Microscopy",
-            "Organic Solar Cell Modelling",
-            "Genetic Algorithm Optimisation"
+            "Ion Cluster Simulation",
+            "Energy Minimisation (GA)"
         ],
-        "Energy / Metric": [4.2, 2.9, 3.4, 6.1, 7.1],
+        "Energy (MeV)": [4.2, 1.5, 2.9, 3.4, 7.1],
         "Date": pd.date_range(start="2024-01-01", periods=5),
     })
 
 physics_data = load_physics_data()
 
-# -------------------------------------------------
-# Academic Profile
-# -------------------------------------------------
+# ---------------- Academic Profile ----------------
 if menu == "Academic Profile":
     st.title("Academic Profile")
 
     st.subheader("Personal Information")
     st.write("**Name:** Kutloano Sikosana")
-    st.write("**Degree:** BSc Physics, BSc Physics Honours")
+    st.write("**Field:** Physics and Mathematics")
+    st.write("**Degree:** BSc Physics and Mathematics")
     st.write("**Institution:** University of Pretoria")
-    st.write("**Current Status:** MSc Physics Candidate")
-    st.write("**Email:** kutloanosikosana@gmail.com")
+    st.write("**Current Goal:** MSc in Physics")
 
     st.markdown("---")
 
-    st.subheader("Professional Profile")
+    st.subheader("Academic Summary")
     st.write(
         """
-        Physics graduate with a strong background in experimental and computational physics,
-        with research experience in organic photovoltaics and nanomaterials.
-        Current work focuses on incorporating metallic nanoparticles into nanoscale
-        bulk heterojunctions to improve polymer solar cell efficiency, combining laboratory
-        experimentation with simulation-based modelling.
+        I am a Physics and Mathematics graduate with a strong interest in theoretical,
+        computational, and data-driven physics. My training spans classical mechanics,
+        quantum mechanics, statistical physics, and numerical methods, with hands-on
+        experience in computational physics and scientific programming.
 
-        Demonstrated strengths in scientific writing, microscopy and microanalysis,
-        numerical methods, and technical communication, supported by tutoring,
-        mentoring, and leadership experience.
+        I am particularly motivated by problems that require translating mathematical
+        structure into physical insight.
         """
     )
 
-# -------------------------------------------------
-# Research & Experience
-# -------------------------------------------------
-elif menu == "Research & Experience":
-    st.title("Research & Experience")
-
-    st.subheader("Research Areas")
-    st.write(
-        """
-        • Organic Photovoltaics  
-        • Metallic Nanoparticles and Nanocomposites  
-        • Computational Physics and Modelling  
-        • Statistical Mechanics and Optimisation  
-        """
-    )
-
-    st.subheader("Research Output")
-    st.write(
-        """
-        • *Tiny Metals:* Electron microscopy review into the synthesis and characterisation
-          of multi-element metallic nanoparticles  
-        • *Mn:Ni:Ce Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cells*  
-        """
-    )
+    st.markdown("---")
 
     st.subheader("Teaching & Academic Support")
     st.write(
         """
-        • Computational Physics Tutor (PHY 255), University of Pretoria  
-        • Physics Demonstrator (PHY 114M)  
-        • Assisted students with debugging, numerical methods, and scientific reasoning  
+        • Tutor for Computational Physics  
+        • Demonstrator for undergraduate Physics (PHY 114M)  
+        • Experience explaining complex physical concepts clearly and rigorously  
         """
     )
 
-# -------------------------------------------------
-# Publications
-# -------------------------------------------------
+# ---------------- Research & Interests ----------------
+elif menu == "Research & Interests":
+    st.title("Research & Academic Interests")
+
+    st.subheader("Primary Interests")
+    st.write(
+        """
+        • Theoretical Physics  
+        • Computational Physics  
+        • Statistical Mechanics  
+        • Condensed Matter and Many-Body Physics  
+        • Numerical Methods and Simulations  
+        """
+    )
+
+    st.subheader("Research Experience")
+    st.write(
+        """
+        • Final-year Computational Physics project involving genetic algorithms  
+        • Simulation of few-ion NaCl clusters and energy minimisation  
+        • Exploration of saddle points and convergence issues in high-dimensional spaces  
+        • Experience working with microscopy data as part of a research group  
+        """
+    )
+
+    st.subheader("Future MSc Focus")
+    st.write(
+        """
+        For my MSc, I aim to deepen my theoretical foundation while developing robust
+        computational tools for solving complex physical systems, particularly in
+        statistical and condensed matter physics.
+        """
+    )
+
+# ---------------- Publications ----------------
 elif menu == "Publications":
-    st.title("Publications")
+    st.title("Publications & Academic Output")
 
     st.write(
         """
-        Upload a CSV containing publications, manuscripts, posters,
-        or conference contributions.
+        Upload a CSV file containing publications, conference abstracts,
+        posters, or preprints. This section is structured to mirror
+        academic application requirements.
         """
     )
 
@@ -155,14 +130,16 @@ elif menu == "Publications":
         publications = pd.read_csv(uploaded_file)
         st.dataframe(publications)
 
-        keyword = st.text_input("Filter by keyword")
+        st.markdown("---")
+
+        keyword = st.text_input("Filter by keyword (title, journal, year, authors)")
 
         if keyword:
             mask = publications.astype(str).apply(
                 lambda col: col.str.lower().str.contains(keyword.lower())
             )
             filtered = publications[mask.any(axis=1)]
-            st.subheader(f"Results for '{keyword}'")
+            st.subheader(f"Filtered Results for '{keyword}'")
             st.dataframe(filtered)
 
         if "Year" in publications.columns:
@@ -170,38 +147,36 @@ elif menu == "Publications":
             year_counts = publications["Year"].value_counts().sort_index()
             st.bar_chart(year_counts)
 
-# -------------------------------------------------
-# Computational & STEM Portfolio
-# -------------------------------------------------
+# ---------------- Computational & STEM Portfolio ----------------
 elif menu == "Computational & STEM Portfolio":
     st.title("Computational & STEM Portfolio")
 
     st.write(
         """
-        This section demonstrates my ability to analyse,
-        model, and visualise scientific data.
+        This section highlights my ability to work with scientific data,
+        simulations, and computational analysis.
         """
     )
 
-    st.subheader("Physics and Modelling Data")
+    st.subheader("Physics Simulation Data")
     st.dataframe(physics_data)
 
-    energy_filter = st.slider(
-        "Filter by Energy / Metric",
+    energy_range = st.slider(
+        "Filter by Energy (MeV)",
         0.0, 10.0,
         (0.0, 10.0)
     )
 
-    filtered_data = physics_data[
-        physics_data["Energy / Metric"].between(*energy_filter)
+    filtered_physics = physics_data[
+        physics_data["Energy (MeV)"].between(*energy_range)
     ]
 
     st.subheader("Filtered Results")
-    st.dataframe(filtered_data)
+    st.dataframe(filtered_physics)
 
-    st.subheader("Metric vs Time")
+    st.subheader("Energy vs Time")
     st.line_chart(
-        filtered_data.set_index("Date")["Energy / Metric"]
+        filtered_physics.set_index("Date")["Energy (MeV)"]
     )
 
     st.markdown("---")
@@ -210,25 +185,23 @@ elif menu == "Computational & STEM Portfolio":
     st.write(
         """
         • Python (NumPy, Pandas, Matplotlib, Streamlit)  
+        • Scientific Computing and Numerical Analysis  
         • Genetic Algorithms and Optimisation  
-        • SEM and EDS Microscopy  
-        • Thin-Film and Bulk Heterojunction Fabrication  
-        • Numerical Analysis and Scientific Computing  
+        • Data Analysis and Visualisation  
+        • Linux-based computational environments  
         """
     )
 
-# -------------------------------------------------
-# Contact
-# -------------------------------------------------
+# ---------------- Contact ----------------
 elif menu == "Contact":
-    st.title("Contact")
+    st.title("Contact Information")
 
     st.write("**Email:** kutloanosikosana@gmail.com")
-    st.write("**LinkedIn:** www.linkedin.com/in/kutloano-sikosana-5025a2283")
-
+    st.write("**Field:** Physics (MSc Applicant)")
     st.write(
         """
-        Open to postgraduate research opportunities,
-        academic collaboration, and funded MSc projects.
+        I am open to research opportunities, academic collaborations,
+        and postgraduate study discussions.
         """
     )
+

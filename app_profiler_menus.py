@@ -61,6 +61,14 @@ if menu == "Academic Profile":
 
         I am particularly motivated by problems that require translating mathematical
         structure into physical insight.
+        Physics Master’s student at the University of Pretoria | NRF-funded researcher in renewable energy.
+
+        I hold a BSc in Physics and Mathematics and an Honours degree in Physics from UP. My research experience 
+        focuses on polymer (organic) solar cells, combining experimental work and simulation-based modelling to improve 
+        device efficiency and stability.
+
+        Driven by curiosity and problem-solving, I am passionate about advancing clean energy 
+        technologies and contributing to impactful scientific innovation.
         """
     )
 
@@ -204,4 +212,5 @@ elif menu == "Contact":
         and postgraduate study discussions.
         """
     )
+
 

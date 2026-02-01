@@ -98,6 +98,36 @@ elif menu == "Research & Experience":
         """
     )
 
+elif menu == "Research & Experience":
+    st.title("Research & Experience")
+
+    st.subheader("Research Areas")
+    st.write(
+        """
+        • Organic Photovoltaics  
+        • Metallic Nanoparticles and Nanocomposites  
+        • Computational Physics and Modelling  
+        • Statistical Mechanics and Optimisation  
+        """
+    )
+
+    st.subheader("Research Output")
+    st.write(
+        """
+        • *Tiny Metals:* Electron microscopy review into the synthesis and characterisation
+          of multi-element metallic nanoparticles  
+        • *Mn:Ni:Ce Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cells*  
+        """
+    )
+
+    st.subheader("Teaching & Academic Support")
+    st.write(
+        """
+        • Computational Physics Tutor (PHY 255), University of Pretoria  
+        • Physics Demonstrator (PHY 114M)  
+        • Assisted students with debugging, numerical methods, and scientific reasoning  
+        """
+    )
 # ---------------- Publications ----------------
 elif menu == "Publications":
     st.title("Publications & Academic Output")
@@ -105,8 +135,7 @@ elif menu == "Publications":
     st.write(
         """
         Upload a CSV file containing publications, conference abstracts,
-        posters, or preprints. This section is structured to mirror
-        academic application requirements.
+        posters, or preprints.
         """
     )
 
@@ -194,4 +223,5 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 

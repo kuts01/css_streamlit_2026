@@ -95,7 +95,22 @@ elif menu == "Publications":
         **Author:** Kutloano Sikosana  
         **Supervisors:** M. Diale, T.E. Seimela, M.S.G. Hamed  
         **Institution:** University of Pretoria  
-        **Year:** 2025  
+        **Year:** 2025 
+        **Abstract:** This study investigates the incorporation of Mn:Ni:Ce trimetallic nanoparticles into the bulk
+        heterojunction active layer of inverted organic solar cells based on a PCBM:PCDTBT blend.
+        The nanoparticles were synthesised via a wet chemical process and characterised using SEM
+        and EDS, revealing predominantly spherical particles with a strong cerium dominance,
+        indicating incomplete trimetallic alloy formation. Devices fabricated with varying nanoparticle
+        concentrations were evaluated using J-V measurements, quantum efficiency, UV-Vis
+        absorption, and impedance spectroscopy. The optimal nanoparticle loading of 1 mg led to a
+        power conversion efficiency of 6.63%, nearly tripling that of the pristine device, through
+        enhanced fill factor, short-circuit current, and open-circuit voltage. Optical measurements
+        showed broader spectral absorption and increased photon harvesting attributed to localised
+        surface plasmon resonance effects. Impedance analysis confirmed improved and more
+        uniform charge transport at optimal loading, while higher concentrations caused aggregation
+        and recombination losses. These findings demonstrate that controlled nanoparticle integration
+        enhances organic solar cell performance, with further research needed to optimise
+        nnanoparticle composition and stability.
         """
     )
 
@@ -128,6 +143,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

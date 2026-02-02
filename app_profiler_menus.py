@@ -82,40 +82,53 @@ elif menu == "Research & Experience":
 
 # ---------------- Publications ----------------
 elif menu == "Publications":
-    st.title("Publications & Academic Output")
+    st.title("Publications")
 
-    st.write(
+    st.subheader("Honours Research Papers")
+
+    st.markdown(
         """
-        Upload a CSV file containing publications, conference abstracts,
-        posters, or preprints.
+        **Tiny Metals: A Comprehensive Electron Microscopy Review into the Synthesis and
+        Characterisation of Multi-element Metallic Nanoparticles**
+
+        **Author:** Kutloano Sikosana  
+        **Supervisors:** K.P.A. Sikosana, M.Y. Rasool  
+        **Institution:** University of Pretoria  
+        **Year:** 2025  
         """
     )
 
-    uploaded_file = st.file_uploader(
-        "Upload Publications (CSV)",
-        type="csv"
+    st.markdown("---")
+
+    # Load PDF
+    pdf_path = "Honours_Thesis_Kutloano_Sikosana.pdf"
+
+    with open(pdf_path, "rb") as pdf_file:
+        pdf_bytes = pdf_file.read()
+
+    st.download_button(
+        label="Download Honours Paper (PDF)",
+        data=pdf_bytes,
+        file_name="Kutloano_Sikosana_Honours_Paper.pdf",
+        mime="application/pdf",
     )
 
-    if uploaded_file:
-        publications = pd.read_csv(uploaded_file)
-        st.dataframe(publications)
+    st.markdown("---")
 
-        st.markdown("---")
+    st.subheader("Preview")
 
-        keyword = st.text_input("Filter by keyword (title, journal, year, authors)")
+    # Embed PDF
+    pdf_base64 = base64.b64encode(pdf_bytes).decode("utf-8")
+    pdf_display = f"""
+        <iframe
+            src="data:application/pdf;base64,{pdf_base64}"
+            width="100%"
+            height="800"
+            type="application/pdf">
+        </iframe>
+    """
 
-        if keyword:
-            mask = publications.astype(str).apply(
-                lambda col: col.str.lower().str.contains(keyword.lower())
-            )
-            filtered = publications[mask.any(axis=1)]
-            st.subheader(f"Filtered Results for '{keyword}'")
-            st.dataframe(filtered)
-
-        if "Year" in publications.columns:
-            st.subheader("Publication Timeline")
-            year_counts = publications["Year"].value_counts().sort_index()
-            st.bar_chart(year_counts)
+    st.markdown(pdf_display, unsafe_allow_html=True)
 
 # ---------------- Contact ----------------
 
@@ -131,6 +144,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

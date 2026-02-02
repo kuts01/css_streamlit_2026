@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import base64
 
 # Page config
 st.set_page_config(
@@ -115,23 +114,6 @@ elif menu == "Publications":
         mime="application/pdf",
     )
 
-    st.markdown("---")
-
-    st.subheader("Preview")
-
-    # Embed PDF
-    pdf_base64 = base64.b64encode(pdf_bytes).decode("utf-8")
-    pdf_display = f"""
-        <iframe
-            src="data:application/pdf;base64,{pdf_base64}"
-            width="100%"
-            height="800"
-            type="application/pdf">
-        </iframe>
-    """
-
-    st.markdown(pdf_display, unsafe_allow_html=True)
-
 # ---------------- Contact ----------------
 
 elif menu == "Contact":
@@ -146,6 +128,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

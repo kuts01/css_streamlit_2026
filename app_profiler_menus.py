@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import base64
 
 # Page config
 st.set_page_config(
@@ -101,7 +102,7 @@ elif menu == "Publications":
     st.markdown("---")
 
     # Load PDF
-    pdf_path = "Honours_Thesis_Kutloano_Sikosana.pdf"
+    pdf_path = "HonoursResearchProjectKutloanoSikosana20420961.pdf"
 
     with open(pdf_path, "rb") as pdf_file:
         pdf_bytes = pdf_file.read()
@@ -144,6 +145,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

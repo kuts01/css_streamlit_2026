@@ -67,7 +67,7 @@ elif menu == "Research & Experience":
         """
         • *Tiny Metals:* Electron microscopy review into the synthesis and characterisation
           of multi-element metallic nanoparticles  
-        • *Mn:Ni:Ce Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cells*  
+        • *Investigating a Mn:Ni:Ce Metallic Nanocomposite-Enhanced Bulk Heterojunction Inverted Organic Solar Cell Device*  
         """
     )
 
@@ -146,6 +146,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

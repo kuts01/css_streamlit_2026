@@ -96,6 +96,7 @@ elif menu == "Publications":
         **Supervisors:** M. Diale, T.E. Seimela, M.S.G. Hamed  
         **Institution:** University of Pretoria  
         **Year:** 2025 
+        
         **Abstract:** This study investigates the incorporation of Mn:Ni:Ce trimetallic nanoparticles into the bulk
         heterojunction active layer of inverted organic solar cells based on a PCBM:PCDTBT blend.
         The nanoparticles were synthesised via a wet chemical process and characterised using SEM
@@ -143,6 +144,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 

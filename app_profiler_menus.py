@@ -89,11 +89,12 @@ elif menu == "Publications":
 
     st.markdown(
         """
-        **Tiny Metals: A Comprehensive Electron Microscopy Review into the Synthesis and
-        Characterisation of Multi-element Metallic Nanoparticles**
+        **Investigating a Mn:Ni:Ce Metallic
+        Nanocomposite-Enhanced Bulk Heterojunction
+        Inverted Organic Solar Cell Device**
 
         **Author:** Kutloano Sikosana  
-        **Supervisors:** K.P.A. Sikosana, M.Y. Rasool  
+        **Supervisors:** M. Diale, T.E. Seimela, M.S.G. Hamed  
         **Institution:** University of Pretoria  
         **Year:** 2025  
         """
@@ -145,6 +146,7 @@ elif menu == "Contact":
         academic collaboration, and funded MSc projects.
         """
     )
+
 
 
 
